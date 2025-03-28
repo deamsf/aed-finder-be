@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import AEDMap from './components/AEDMap';
 import aedData from './data/aed_data.json';
-import { MapPin, Map } from 'lucide-react';
+import { MapPin, Map, AlertCircle } from 'lucide-react';
 
 type FilterType = 'all' | 'public' | 'private';
 
@@ -19,9 +19,15 @@ function App() {
     <div className="h-screen flex flex-col overflow-hidden">
       <header className="bg-white shadow-sm p-4 z-10">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <MapPin className="w-6 h-6 text-blue-600" />
-            <h1 className="text-xl font-bold text-gray-900">AED Finder</h1>
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2">
+              <MapPin className="w-6 h-6 text-blue-600" />
+              <h1 className="text-xl font-bold text-gray-900">AED Finder</h1>
+            </div>
+            <div className="flex items-center gap-2 bg-amber-50 text-amber-800 px-3 py-1.5 rounded-md border border-amber-200">
+              <AlertCircle className="w-4 h-4" />
+              <span className="text-sm font-medium">POC met dummy data</span>
+            </div>
           </div>
           <div className="flex items-center gap-4">
             <select
